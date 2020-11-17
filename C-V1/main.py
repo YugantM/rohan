@@ -28,7 +28,7 @@ def sending():
 
         if 210 <= int(data) <= 260:
 
-            res = requests.post('http://localhost:5001/recieve', json=dictToSend)
+            res = requests.post('http://172.17.0.1:5001/recieve', json=dictToSend)
 
             print(res.text)
         else:
@@ -39,4 +39,4 @@ def sending():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(host='0.0.0.0',debug=False,port=5000)

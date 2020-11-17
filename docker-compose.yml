@@ -1,0 +1,17 @@
+version: '3.8'
+services: 
+    service1:
+        build: ./C-V1/
+        volumes: 
+            - ./C-V1/:/usr/src/app/
+        ports: 
+            - "5000:5000"
+
+    service2:
+            build: ./C-A1/
+            volumes: 
+                - ./C-A1/:/usr/src/app/
+            ports: 
+                - "5001:5001"
+            expose:
+                - 5001
